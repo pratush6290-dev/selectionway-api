@@ -1,3 +1,17 @@
+// --- Home Page Route ---
+app.get('/', (req, res) => {
+    res.json({
+        message: "🚀 SelectionWay API is Live and Running!",
+        status: "Healthy",
+        sync_interval: "Every 2-5 minutes",
+        endpoints: {
+            all_batches: "/allbatch",
+            force_sync: "/force-sync",
+            batch_details: "/chapter/[batch_id]"
+        },
+        author: "SelectionWay Team"
+    });
+});
 const express = require('express');
 const mongoose = require('mongoose');
 const axios = require('axios');
@@ -97,5 +111,6 @@ app.listen(PORT, () => {
     syncData(); // Pehli baar server start hote hi sync karein
 
 });
+
 
 
